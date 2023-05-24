@@ -1,20 +1,14 @@
-
 from cgitb import html
 import os
 import pandas as pd
 import matplotlib.pyplot as plt
 import networkx as nx
-# Library to track geolocation
 import geoip2.database
-# Pyfiglet for intro ASCII art. Download by "$pip install pyfiglet".
-# Documentation at https://pypi.org/project/pyfiglet/0.7/
 import pyfiglet
 from pyvis.network import Network
 
  
 # banner() function for ASCII Word Art in the terminal. banner() is called at start of every function after 
-# clearing screen to stay on top of program
-# effectively pinned as the header of the program
 def banner():
     result = pyfiglet.figlet_format("Network Analyzer", font = "slant" ) #pyfiglet module helps create the art
     print(result)
@@ -345,10 +339,6 @@ def about():
     banner()
     print("**Network Analyzer Program**")
     print("Network Analyzer analyzes the network information available in CSV format, captured using Wireshark or any other network/packet sniffing/capturing tool.")
-    # print("This is developed solely for use in Windows OS and developmen is underway for Linux distros as well.\n")
-    # print("Created By: AADITH SUKUMAR")
-    # print("GitHub: https://github.com/aadi1011")
-    # print("LinkedIn: https://www.linkedin.com/in/aadith-sukumar/")
     os.system('pause')
     os.system('cls')
     start_screen()
@@ -383,7 +373,6 @@ def start_screen():
             os.system('cls')
             print("Let's start with Network Analysis:\n\n")
             try:
-                # Complete file path of CSV file required. Error(L268) if missing file path provided.
                 file_path = input("Enter complete csv file path with readings: ")
                 # CSV file read and imported as pandas dataframes and stored in data_file variable.
                 data_file = pd.read_csv(file_path) 
